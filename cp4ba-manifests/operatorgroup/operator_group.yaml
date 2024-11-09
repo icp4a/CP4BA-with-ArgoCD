@@ -1,0 +1,28 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: operatorgroup
+  namespace: ibm-licensing
+spec:
+  targetNamespaces:
+  - ibm-licensing
+
+
+---
+
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: operatorgroup
+  namespace: ibm-cert-manager
+
+---
+
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: ibm-cp4a-operator-catalog-group
+  namespace: cp4ba-project
+spec:
+  targetNamespaces:
+  - cp4ba-project

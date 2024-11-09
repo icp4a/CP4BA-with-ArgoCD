@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: parentapplication
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    path: cp4ba-manifests/setup/childapplication
+    targetRevision: main
+  destination:
+    server: <SERVER>
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:

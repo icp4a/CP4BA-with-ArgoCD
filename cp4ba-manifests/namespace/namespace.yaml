@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ibm-cert-manager
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ibm-licensing
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cp4ba-project

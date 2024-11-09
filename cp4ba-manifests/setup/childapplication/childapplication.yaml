@@ -1,0 +1,122 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: catalogsource
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    path: cp4ba-manifests/catalogsource
+    targetRevision: main
+  destination:
+    server: <SERVER>
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+  
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cp4bacr
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    path: cp4ba-manifests/deployCR
+    targetRevision: main
+  destination:
+    server: <SERVER>
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespace
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    path: cp4ba-manifests/namespace
+    targetRevision: main
+  destination:
+    server: <SERVER>
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: operatorgroup
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    path: cp4ba-manifests/operatorgroup
+    targetRevision: main
+  destination:
+    server: <SERVER>
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: secrets
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    path: cp4ba-manifests/secrets
+    targetRevision: main
+  destination:
+    server: <SERVER>
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: subscription
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    path: cp4ba-manifests/subscriptions
+    targetRevision: main
+  destination:
+    server: <SERVER>
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:

@@ -1,0 +1,209 @@
+################################################################################
+#
+# Licensed Materials - Property of IBM
+#
+# (C) Copyright IBM Corp. 2019. All Rights Reserved.
+#
+# US Government Users Restricted Rights - Use, duplication or
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+###############################################################################
+# CP4BA 24.0.0-IF002 catalog
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-cp4a-operator-catalog
+  namespace: "cp4ba-project"
+spec:
+  displayName: ibm-cp4a-operator
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-cp-automation-catalog@sha256:990fc0915a570ef165074015aae4483ed458600f373840a3e7efe751faa9ac13
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+---
+# IBM CS Flink Operator Catalog 1.18.3 (2.0.3)
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-opencontent-flink
+  namespace: "cp4ba-project"
+spec:
+  displayName: IBM CS Opencontent Flink Catalog
+  publisher: IBM
+  sourceType: grpc
+  image: >-
+    icr.io/cpopen/ibm-opencontent-flink-operator-catalog@sha256:05b9d6b24d142bc2e9cde8bed4c8db45233cb7eaa5b37fec0daa25906c16daa3
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+  priority: 100
+---
+# IBM CS Opensearch Operator Catalog 1.1.2213
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-cs-opensearch-catalog
+  namespace: "cp4ba-project"
+spec:
+  displayName: IBM CS Opencontent Opensearch Catalog
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/opencontent-elasticsearch-operator-catalog@sha256:947c8d3ea4c281fb81e53ee1f1051c1d25fcb807d3e1466d430f6bfaa81a406c
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+  priority: 100
+---
+# IBM Certificate Manager 4.2.7
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-cert-manager-catalog
+  namespace: "ibm-cert-manager"
+spec:
+  displayName: ibm-cert-manager-4.2.7
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-cert-manager-operator-catalog@sha256:4dcf4ace4b5f166f83b31063f7e6404dbf78d8e98a9d4fcf52fedf576a55ca6c
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+---
+# IBM License Manager 4.2.7
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-licensing-catalog
+  namespace: "ibm-licensing"
+spec:
+  displayName: ibm-licensing-4.2.7
+  publisher: IBM
+  image: icr.io/cpopen/ibm-licensing-catalog@sha256:e14ef29968ffd911602f2e5be776480d1bbf0fa09de22415a3bedbabcf58860c
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+---
+# IBM Cloud Foundational Services 4.6.5
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-cs-install-catalog-v4-6-5
+  namespace: "cp4ba-project"
+  annotations:
+    bedrock_catalogsource_priority: '1'
+spec:
+  displayName: IBM CS Install Operators
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-cs-install-catalog@sha256:e57569666cae5035f188d72665366759609e4d8b17bb3bad011b299bd17353ce
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+  priority: 100    
+---
+# IBM Business Teams Service version 3.34.0
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: bts-operator-v3-34-0
+  namespace: "cp4ba-project"
+  annotations:
+    bedrock_catalogsource_priority: '1'
+spec:
+  displayName: BTS Operator
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-bts-operator-catalog@sha256:437a91f9e0cc224c32fb3d574dbe56efe5d1211f2338746e8a7e192034beae8f
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+---
+# IBM CS IM Operator Catalog 4.5.4
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-iam-operator-catalog
+  namespace: "cp4ba-project"
+  annotations:
+    bedrock_catalogsource_priority: '1'
+spec:
+  displayName: IBM IAM Operator Catalog
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-iam-operator-catalog@sha256:f7e9ac318d31a64c7d2921e8702c2e444532c733e0eae31343514802f5d1ebf5
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+  priority: 100
+---
+# IBM Zen Operator Catalog 5.1.7
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-zen-operator-catalog
+  namespace: "cp4ba-project"
+  annotations:
+    bedrock_catalogsource_priority: '1'
+spec:
+  displayName: IBM Zen Operator Catalog
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-zen-operator-catalog@sha256:c4d8a4af7a16e3d10d90ea8298249d9880c7042384fcea373531cd1bf9616e7d
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+  priority: 100
+---
+# IBM Events Operator Catalog 5.0.1
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-events-operator-catalog
+  namespace: "cp4ba-project"
+  annotations:
+    bedrock_catalogsource_priority: '1'
+spec:
+  displayName: IBM Events Operator Catalog
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-events-operator-catalog@sha256:4cd92e1a78b080cc94beae89c257078314a6a0fae66e8a14512953b1c4004c09
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+  priority: 100
+---
+# Cloud Native PostgresSQL 1.18.12 (4.25.0)
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: cloud-native-postgresql-catalog
+  namespace: "cp4ba-project"
+  annotations:
+    bedrock_catalogsource_priority: '1'
+spec:
+  displayName: Cloud Native Postgresql Catalog
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-cpd-cloud-native-postgresql-operator-catalog@sha256:0b46a3ec66622dd4a96d96243602a21d7a29cd854f67a876ad745ec524337a1f
+  updateStrategy:
+    registryPoll:
+      interval: 45m
+  priority: 100
+---
+# IBM FileNet Content Manager Standalone catalog.
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-fncm-operator-catalog
+  namespace: "cp4ba-project"
+spec:
+  displayName: ibm-fncm-operator
+  publisher: IBM
+  sourceType: grpc
+  image: icr.io/cpopen/ibm-fncm-catalog@sha256:8305209803f534779d1df2666a6b953272d6f4cbd65821839b2ba2311f303ea6
+  updateStrategy:
+    registryPoll:
+      interval: 45m
