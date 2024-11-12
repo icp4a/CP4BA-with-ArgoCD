@@ -1,0 +1,10 @@
+# YAML template for ibm-cp4ba-common-config
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: ibm-cp4ba-common-config
+  namespace: "cp4ba-project"
+data:
+  operators_namespace: "cp4ba-project"
+  services_namespace: "cp4ba-project"

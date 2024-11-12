@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: parentapplication
   namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "-150"
 spec:
   project: default
   source:
