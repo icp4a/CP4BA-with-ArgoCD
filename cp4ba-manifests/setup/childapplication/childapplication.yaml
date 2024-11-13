@@ -15,7 +15,7 @@ spec:
     server: <SERVER>
   syncPolicy:
     automated:
-      prune: false
+      prune: true
       selfHeal: true
     syncOptions:
 
