@@ -4,7 +4,7 @@ metadata:
   name: parentapplication
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "-150"
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   project: default
   source:
