@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    repoURL: <GIT_REPO_URL>
     path: cp4ba-manifests/namespace
     targetRevision: main
   destination:
@@ -31,7 +31,32 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    repoURL: <GIT_REPO_URL>
+    path: cp4ba-manifests/catalogsource
+    targetRevision: main
+  destination:
+    server: <SERVER>
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+
+---
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: configMap
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+spec:
+  project: default
+  source:
+    repoURL: <GIT_REPO_URL>
     path: cp4ba-manifests/catalogsource
     targetRevision: main
   destination:
@@ -50,11 +75,11 @@ metadata:
   name: secrets
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
+    argocd.argoproj.io/sync-wave: "25"
 spec:
   project: default
   source:
-    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    repoURL: <GIT_REPO_URL>
     path: cp4ba-manifests/secrets
     targetRevision: main
   destination:
@@ -73,11 +98,11 @@ metadata:
   name: operatorgroup
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "25"
+    argocd.argoproj.io/sync-wave: "30"
 spec:
   project: default
   source:
-    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    repoURL: <GIT_REPO_URL>
     path: cp4ba-manifests/operatorgroup
     targetRevision: main
   destination:
@@ -100,7 +125,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    repoURL: <GIT_REPO_URL>
     path: cp4ba-manifests/subscriptions
     targetRevision: main
   destination:
@@ -123,7 +148,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/icp4a/CP4BA-with-ArgoCD.git
+    repoURL: <GIT_REPO_URL>
     path: cp4ba-manifests/deployCR
     targetRevision: main
   destination:
