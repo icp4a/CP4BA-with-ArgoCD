@@ -44,12 +44,10 @@ spec:
 
 ---
 
----
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: configMap
+  name: configmap
   namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "20"
@@ -57,7 +55,7 @@ spec:
   project: default
   source:
     repoURL: <GIT_REPO_URL>
-    path: cp4ba-manifests/catalogsource
+    path: cp4ba-manifests/configmap
     targetRevision: main
   destination:
     server: <SERVER>
