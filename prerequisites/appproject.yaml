@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: cp4ba-project
+  name: cp4ba
   namespace: openshift-gitops
 spec:
   clusterResourceWhitelist:
