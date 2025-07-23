@@ -1,0 +1,11 @@
+apiVersion: operator.ibm.com/v3
+kind: CommonService
+metadata:
+  name: common-service
+  namespace: cp4ba-project
+spec:
+  license:
+    accept: true
+  operatorNamespace: cp4ba-project
+  servicesNamespace: cp4ba-operand
+  size: small # Use small if the sc_deployment_profile_size is small, otherwise use medium
