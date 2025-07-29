@@ -1,0 +1,13 @@
+apiVersion: operator.ibm.com/v1
+kind: NamespaceScope
+metadata:
+  name: common-service
+  namespace: cp4ba-project
+spec:
+  csvInjector:
+    enable: true
+  namespaceMembers:
+    - cp4ba-project
+    - cp4ba-operand
+  restartLabels:
+    intent: projected
