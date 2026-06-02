@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-common-service-operator-v4.6-ibm-cs-install-catalog-v4-6-4-cp4ba-project
+  namespace: cp4ba-project
+spec:
+  channel: v4.6
+  name: ibm-common-service-operator
+  source: <new-catalog-name>
+  sourceNamespace: cp4ba-project
